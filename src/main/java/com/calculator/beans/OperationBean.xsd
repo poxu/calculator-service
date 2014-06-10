@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="operationBean" type="operationBean"/>
+
+  <xs:complexType name="operationBean">
+    <xs:sequence/>
+    <xs:attribute name="operation" type="xs:string"/>
+  </xs:complexType>
+</xs:schema>
+

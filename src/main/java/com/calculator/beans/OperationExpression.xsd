@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="numberExpression" type="numberExpression"/>
+
+  <xs:element name="operationExpression" type="operationExpression"/>
+
+  <xs:complexType name="operationExpression">
+    <xs:complexContent>
+      <xs:extension base="numberExpression">
+        <xs:sequence>
+          <xs:element name="members" type="numberExpression" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="operation" type="operationSign"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="numberExpression">
+    <xs:sequence/>
+    <xs:attribute name="value" type="xs:long"/>
+  </xs:complexType>
+
+  <xs:simpleType name="operationSign">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PLUS"/>
+      <xs:enumeration value="MINUS"/>
+      <xs:enumeration value="MULTIPLY"/>
+      <xs:enumeration value="DIVIDE"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+
